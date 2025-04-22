@@ -8,14 +8,14 @@ on:
 jobs:
   release:
     name: GitHub Profile Views Counter Action
-    runs-on: ubuntu-22.04  # Updated from ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.INSIGHTS_TOKEN }}
-      - uses: actions/setup-node@v2.1.5
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14.17.0
-      - uses: gayanvoice/github-profile-views-counter-action@3.0.0
+          node-version: 14
+      - uses: gayanvoice/github-profile-views-counter-action@latest
         env:
           INSIGHTS_TOKEN: ${{ secrets.INSIGHTS_TOKEN }}
